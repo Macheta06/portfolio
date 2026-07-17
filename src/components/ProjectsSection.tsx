@@ -1,8 +1,8 @@
-import React from 'react';
+import type { FC } from 'react';
 import type { Project } from '../models/portfolio.types';
 
 // Componente interno para encapsular la tarjeta de proyecto
-const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+const ProjectCard: FC<{ project: Project }> = ({ project }) => {
   return (
     <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column' }}>
       <h3 style={{ color: 'var(--accent-primary)', marginBottom: '0.5rem' }}>{project.title}</h3>
@@ -48,7 +48,7 @@ interface ProjectsSectionProps {
   projects: Project[];
 }
 
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
+export const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
   const realProjects = projects.filter(p => p.type === 'real');
   const studyProjects = projects.filter(p => p.type === 'study');
 

@@ -1,11 +1,11 @@
-import React from 'react';
+import type { FC } from 'react';
 import type { ProfileInfo } from '../models/portfolio.types';
 
 interface FooterProps {
   profile: ProfileInfo;
 }
 
-export const Footer: React.FC<FooterProps> = ({ profile }) => {
+export const Footer: FC<FooterProps> = ({ profile }) => {
   const currentYear = new Date().getFullYear();
 
   return (

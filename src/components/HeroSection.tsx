@@ -1,11 +1,11 @@
-import React from 'react';
+import type { FC } from 'react';
 import type { ProfileInfo } from '../models/portfolio.types';
 
 interface HeroSectionProps {
   profile: ProfileInfo;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ profile }) => {
+export const HeroSection: FC<HeroSectionProps> = ({ profile }) => {
   return (
     <section className="hero-section section-padding container animate-fade-in">
       <div className="hero-content">

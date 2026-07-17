@@ -1,7 +1,7 @@
-import React from 'react';
+import type { FC, MouseEvent } from 'react';
 
-export const Navbar: React.FC = () => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+export const Navbar: FC = () => {
+  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     if (targetElement) {

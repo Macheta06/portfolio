@@ -1,4 +1,3 @@
-import React from 'react';
 import { usePortfolio } from './hooks/usePortfolio';
 import { HeroSection } from './components/HeroSection';
 import { EducationSection } from './components/EducationSection';

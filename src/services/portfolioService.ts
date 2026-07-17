@@ -50,14 +50,16 @@ export const getProjects = (): Project[] => [
       "Vercel",
       "Render",
     ],
+    link: "https://somoshuizy.vercel.app/",
     type: "real",
   },
   {
     id: "proj-2",
-    title: "El Agropecuario",
+    title: "Hardware Store Website",
     description:
-      "Full-stack MERN application for an agricultural and hardware enterprise, featuring dynamic inventory management and AI-powered product categorization. Architected for scalability and deployed with automated image optimization to ensure high-performance delivery on mobile devices.",
+      "Development of a hardware store website featuring a product catalog and inventory management.",
     technologies: ["React", "TypeScript", "TailwindCSS"],
+    link: "https://elagropecuariomadrid.com/",
     type: "real",
   },
   {

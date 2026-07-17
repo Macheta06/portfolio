@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import type { Education, Certification } from '../models/portfolio.types';
 
 interface EducationSectionProps {
@@ -6,7 +6,7 @@ interface EducationSectionProps {
   certifications: Certification[];
 }
 
-export const EducationSection: React.FC<EducationSectionProps> = ({ educationList, certifications }) => {
+export const EducationSection: FC<EducationSectionProps> = ({ educationList, certifications }) => {
   return (
     <section className="section-padding container animate-fade-in">
       <h2 className="text-gradient">Education & Certifications</h2>
