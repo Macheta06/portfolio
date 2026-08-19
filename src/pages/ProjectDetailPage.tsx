@@ -122,12 +122,7 @@ export const ProjectDetailPage: FC = () => {
         </div>
 
         <DetailSection title="Overview">
-          <p style={{ color: 'var(--text-secondary)', marginBottom: project.solutionOverview ? '1rem' : 0 }}>
-            {project.summary}
-          </p>
-          {project.solutionOverview && (
-            <p style={{ color: 'var(--text-secondary)' }}>{project.solutionOverview}</p>
-          )}
+          <p style={{ color: 'var(--text-secondary)' }}>{project.summary}</p>
         </DetailSection>
 
         {project.problemStatement && (
