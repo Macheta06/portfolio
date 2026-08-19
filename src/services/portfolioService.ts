@@ -38,8 +38,12 @@ export const getCertifications = (): Certification[] => [
 export const getProjects = (): Project[] => [
   {
     id: "proj-1",
+    slug: "somoshuizy",
     title: "SomosHuizy",
-    description:
+    tagline:
+      "MERN-based web application developed for an entrepreneurial project and deployed online.",
+    type: "real",
+    summary:
       "MERN-based web application developed for an entrepreneurial project and deployed online. Built focusing on real-world functionality and scalable architecture.",
     technologies: [
       "TypeScript",
@@ -50,34 +54,45 @@ export const getProjects = (): Project[] => [
       "Vercel",
       "Render",
     ],
-    link: "https://somoshuizy.vercel.app/",
-    type: "real",
+    liveLink: "https://somoshuizy.vercel.app/",
   },
   {
     id: "proj-2",
+    slug: "hardware-store",
     title: "Hardware Store Website",
-    description:
+    tagline:
+      "Hardware store website featuring a product catalog and inventory management.",
+    type: "real",
+    summary:
       "Development of a hardware store website featuring a product catalog and inventory management.",
     technologies: ["React", "TypeScript", "TailwindCSS"],
-    link: "https://elagropecuariomadrid.com/",
-    type: "real",
+    liveLink: "https://elagropecuariomadrid.com/",
   },
   {
     id: "proj-3",
+    slug: "teslo-shop",
     title: "Teslo | Shop",
-    description:
+    tagline:
+      "React and TypeScript application focused on an admin dashboard, authorization forms, and file uploads.",
+    type: "study",
+    summary:
       'A comprehensive web application built with React and TypeScript using Vite. This project focuses on create an admin dashboard, authorization forms and files upload. Developed as part of the "React: De cero a experto" course by DevTalles (Udemy) to master modern frontend architecture and type-safe development.',
     technologies: ["React", "TypeScript", "Vite"],
-    link: "https://teslo-shop-react-mac.netlify.app/",
-    type: "study",
+    liveLink: "https://teslo-shop-react-mac.netlify.app/",
   },
   {
     id: "proj-4",
+    slug: "heroes-app",
     title: "Heroes App",
-    description:
+    tagline:
+      "React and TypeScript application focused on advanced state management with the Context API and custom Hooks.",
+    type: "study",
+    summary:
       'A comprehensive web application built with React and TypeScript using Vite. This project focuses on advanced state management through the Context API, custom Hooks, and a scalable file structure. Developed as part of the "React: De cero a experto" course by DevTalles (Udemy) to master modern frontend architecture and type-safe development.',
     technologies: ["React", "TypeScript", "Vite", "Context API"],
-    link: "https://roaring-heliotrope-7cfb9c.netlify.app/",
-    type: "study",
+    liveLink: "https://roaring-heliotrope-7cfb9c.netlify.app/",
   },
 ];
+
+export const getProjectBySlug = (slug: string): Project | undefined =>
+  getProjects().find((project) => project.slug === slug);

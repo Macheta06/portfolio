@@ -1,14 +1,7 @@
-import type { FC, MouseEvent } from 'react';
+import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Navbar: FC = () => {
-  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <nav style={{
       position: 'sticky',
@@ -24,32 +17,23 @@ export const Navbar: FC = () => {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        <div style={{ fontWeight: 700, fontSize: '1.25rem', color: 'var(--text-primary)' }}>
+        <Link
+          to="/"
+          style={{ fontWeight: 700, fontSize: '1.25rem', color: 'var(--text-primary)', textDecoration: 'none' }}
+        >
           AM<span style={{ color: 'var(--accent-primary)' }}>.</span>
-        </div>
-        
+        </Link>
+
         <div style={{ display: 'flex', gap: '1.5rem' }}>
-          <a 
-            href="#hero" 
-            onClick={(e) => handleScroll(e, 'hero')}
-            style={{ fontSize: '0.875rem', fontWeight: 500 }}
-          >
+          <Link to="/" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
             Home
-          </a>
-          <a 
-            href="#education" 
-            onClick={(e) => handleScroll(e, 'education')}
-            style={{ fontSize: '0.875rem', fontWeight: 500 }}
-          >
+          </Link>
+          <Link to="/#education" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
             Education
-          </a>
-          <a 
-            href="#projects" 
-            onClick={(e) => handleScroll(e, 'projects')}
-            style={{ fontSize: '0.875rem', fontWeight: 500 }}
-          >
+          </Link>
+          <Link to="/#projects" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
             Projects
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

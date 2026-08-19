@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        var base = '/portfolio/';
+        var path = window.location.pathname;
+        var search = window.location.search.replace(/&/g, '~and~');
+        var rest = '';
+
+        if (path.indexOf(base) === 0) {
+          rest = path.slice(base.length);
+        } else if (path.indexOf('/') === 0) {
+          rest = path.slice(1);
+        }
+
+        var query = '?p=/' + rest;
+        if (search) {
+          query += search;
+        }
+
+        window.location.replace(base + query);
+      })();
+    </script>
+  </body>
+</html>

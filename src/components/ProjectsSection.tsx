@@ -1,13 +1,30 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 import type { Project } from '../models/portfolio.types';
 
 // Componente interno para encapsular la tarjeta de proyecto
 const ProjectCard: FC<{ project: Project }> = ({ project }) => {
   return (
     <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column' }}>
-      <h3 style={{ color: 'var(--accent-primary)', marginBottom: '0.5rem' }}>{project.title}</h3>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+        <h3 style={{ color: 'var(--accent-primary)', marginBottom: 0 }}>{project.title}</h3>
+        <span
+          style={{
+            fontSize: '0.7rem',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+            padding: '0.2rem 0.6rem',
+            borderRadius: '999px',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            color: 'var(--accent-primary)',
+            border: '1px solid rgba(59, 130, 246, 0.2)',
+          }}
+        >
+          {project.type === 'real' ? 'Real' : 'Study'}
+        </span>
+      </div>
       <p style={{ flexGrow: 1, marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
-        {project.description}
+        {project.summary}
       </p>
       
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
@@ -28,9 +45,12 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
         ))}
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
-        {project.link && (
-          <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>
+      <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', flexWrap: 'wrap' }}>
+        <Link to={`/projects/${project.slug}`} className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>
+          View Case Study
+        </Link>
+        {project.liveLink && (
+          <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>
             View Project
           </a>
         )}

@@ -1,11 +1,34 @@
+export interface ProjectChallenge {
+  title: string;
+  problem: string;
+  solution: string;
+}
+
+export interface TechnicalDecision {
+  decision: string;
+  rationale: string;
+}
+
 export interface Project {
   id: string;
+  slug: string;
   title: string;
-  description: string;
-  technologies: string[];
-  link?: string;
-  repoLink?: string;
+  tagline: string;
   type: 'real' | 'study';
+  summary: string;
+  technologies: string[];
+  liveLink?: string;
+  repoLink?: string;
+  role?: string;
+  problemStatement?: string;
+  solutionOverview?: string;
+  keyChallenges?: ProjectChallenge[];
+  technicalDecisions?: TechnicalDecision[];
+  architecture?: string;
+  outcomes?: string[];
+  learnings?: string[];
+  nextSteps?: string[];
+  featuredImages?: string[];
 }
 
 export interface Education {
