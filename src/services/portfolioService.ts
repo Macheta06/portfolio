@@ -209,8 +209,31 @@ export const getProjects = (): Project[] => [
     type: "study",
     summary:
       'A comprehensive web application built with React and TypeScript using Vite. This project focuses on create an admin dashboard, authorization forms and files upload. Developed as part of the "React: De cero a experto" course by DevTalles (Udemy) to master modern frontend architecture and type-safe development.',
-    technologies: ["React", "TypeScript", "Vite"],
+    role: "Solo course project developed by following the 'React: De cero a experto' course by DevTalles (Udemy).",
+    keyChallenges: [
+      {
+        title: "JWT Authentication & Protected Routes",
+        problem:
+          "The admin dashboard required authentication so that only logged-in users could access protected areas of the application.",
+        solution:
+          "Implemented a JWT-based auth flow with token handling and protected routes to secure the admin section.",
+      },
+      {
+        title: "File Uploads",
+        problem:
+          "The admin dashboard needed to support file uploads as part of its data-entry flows.",
+        solution:
+          "Integrated file uploads into the admin forms and handled the full submission flow with form state.",
+      },
+    ],
+    learnings: [
+      "Authentication flows with JWT and protecting routes in a React SPA.",
+      "State management with Zustand for a streamlined global store.",
+      "Handling file uploads and form data in admin interfaces.",
+    ],
+    technologies: ["React", "TypeScript", "Vite", "Zustand"],
     liveLink: "https://teslo-shop-react-mac.netlify.app/",
+    repoLink: "https://github.com/Macheta06/teslo-shop",
   },
   {
     id: "proj-4",
@@ -221,8 +244,31 @@ export const getProjects = (): Project[] => [
     type: "study",
     summary:
       'A comprehensive web application built with React and TypeScript using Vite. This project focuses on advanced state management through the Context API, custom Hooks, and a scalable file structure. Developed as part of the "React: De cero a experto" course by DevTalles (Udemy) to master modern frontend architecture and type-safe development.',
-    technologies: ["React", "TypeScript", "Vite", "Context API"],
+    role: "Solo course project developed by following the 'React: De cero a experto' course by DevTalles (Udemy).",
+    keyChallenges: [
+      {
+        title: "Global State with Context & Reducer",
+        problem:
+          "The app needed to share global state across nested components without prop drilling.",
+        solution:
+          "Combined Context with a reducer to centralize state updates and keep components decoupled.",
+      },
+      {
+        title: "Search State in the URL",
+        problem:
+          "Search results needed to persist across navigation and page refreshes.",
+        solution:
+          "Synced the search state with URL query parameters and restored it on load.",
+      },
+    ],
+    learnings: [
+      "Lazy loading routes and components to keep the initial bundle lean.",
+      "Data fetching and server state with TanStack Query.",
+      "Keeping UI state in sync with URL query parameters.",
+    ],
+    technologies: ["React", "TypeScript", "Vite", "Context API", "TanStack Query"],
     liveLink: "https://roaring-heliotrope-7cfb9c.netlify.app/",
+    repoLink: "https://github.com/Macheta06/heroes-app",
   },
 ];
 
