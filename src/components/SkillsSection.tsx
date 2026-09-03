@@ -40,7 +40,7 @@ export const SkillsSection: FC = () => {
         }}
       >
         {skillCategories.map((category) => (
-          <div key={category.title} className="glass-panel" style={{ padding: '1.5rem' }}>
+          <div key={category.title} className="glass-panel skills-card" style={{ padding: '1.5rem' }}>
             <h3 style={{ color: 'var(--accent-primary)', marginBottom: '1rem' }}>{category.title}</h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {category.skills.map((skill) => (

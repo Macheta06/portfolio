@@ -14,14 +14,9 @@ export const HeroSection: FC<HeroSectionProps> = ({ profile }) => {
           <span className="text-gradient">{profile.name}</span>
         </h1>
         <h2 className="hero-role">{profile.role}</h2>
-        <div className="hero-about glass-panel" style={{ marginBottom: '1.5rem' }}>
-          {/* Usamos split para renderizar los párrafos separados por \n\n */}
-          {profile.about.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="about-paragraph">
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '1.5rem' }}>
+          I build reliable, scalable web applications that solve real business problems.
+        </p>
         <div className="hero-actions" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link to="/#projects" className="btn btn-primary">
             View Projects

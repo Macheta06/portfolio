@@ -46,7 +46,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
       </div>
 
       <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', flexWrap: 'wrap' }}>
-        <Link to={`/projects/${project.slug}`} className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>
+        <Link to={`/projects/${project.slug}`} className="btn btn-primary project-study-link" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>
           View Case Study
         </Link>
         {project.liveLink && (

@@ -14,13 +14,13 @@ export const ContactSection: FC<ContactSectionProps> = ({ email, github, linkedi
         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
       </p>
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        <a href={`mailto:${email}`} aria-label="Send email to Andrés" className="btn btn-primary" style={{ padding: '0.75rem 1.5rem' }}>
+        <a href={`mailto:${email}`} aria-label="Send email to Andrés" className="btn btn-primary contact-btn" style={{ padding: '0.75rem 1.5rem' }}>
           Email Me
         </a>
-        <a href={github} target="_blank" rel="noopener noreferrer" aria-label="Andrés GitHub profile" className="btn btn-secondary" style={{ padding: '0.75rem 1.5rem' }}>
+        <a href={github} target="_blank" rel="noopener noreferrer" aria-label="Andrés GitHub profile" className="btn btn-secondary contact-btn" style={{ padding: '0.75rem 1.5rem' }}>
           GitHub
         </a>
-        <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="Andrés LinkedIn profile" className="btn btn-secondary" style={{ padding: '0.75rem 1.5rem' }}>
+        <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="Andrés LinkedIn profile" className="btn btn-secondary contact-btn" style={{ padding: '0.75rem 1.5rem' }}>
           LinkedIn
         </a>
       </div>
