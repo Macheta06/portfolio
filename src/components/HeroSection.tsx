@@ -22,14 +22,14 @@ export const HeroSection: FC<HeroSectionProps> = ({ profile }) => {
             </p>
           ))}
         </div>
-        <div className="hero-actions">
+        <div className="hero-actions" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link to="/#projects" className="btn btn-primary">
             View Projects
           </Link>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Andrés LinkedIn profile" className="btn btn-secondary">
             Contact Me on LinkedIn
           </a>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="Andrés GitHub profile" className="btn btn-secondary">
             View GitHub
           </a>
         </div>

@@ -73,7 +73,7 @@ export const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
   const studyProjects = projects.filter(p => p.type === 'study');
 
   return (
-    <section className="section-padding container animate-fade-in">
+    <section aria-label="Projects" className="section-padding container animate-fade-in">
       <h2 className="text-gradient" style={{ marginBottom: '2rem' }}>My Projects</h2>
       
       {/* Proyectos Reales */}

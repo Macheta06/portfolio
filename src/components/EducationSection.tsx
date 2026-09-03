@@ -8,7 +8,7 @@ interface EducationSectionProps {
 
 export const EducationSection: FC<EducationSectionProps> = ({ educationList, certifications }) => {
   return (
-    <section className="section-padding container animate-fade-in">
+    <section aria-label="Education and certifications" className="section-padding container animate-fade-in">
       <h2 className="text-gradient">Education & Certifications</h2>
       
       <div style={{ display: 'grid', gap: '2rem', marginTop: '2rem' }}>

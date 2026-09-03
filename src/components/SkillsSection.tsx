@@ -30,7 +30,7 @@ const pillStyle = {
 
 export const SkillsSection: FC = () => {
   return (
-    <section className="section-padding container animate-fade-in">
+    <section aria-label="Skills and technologies" className="section-padding container animate-fade-in">
       <h2 className="text-gradient" style={{ marginBottom: '2rem' }}>Skills & Technologies</h2>
       <div
         style={{

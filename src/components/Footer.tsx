@@ -24,13 +24,13 @@ export const Footer: FC<FooterProps> = ({ profile }) => {
         </p>
         
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
-          <a href={`mailto:${profile.email}`} className="btn btn-primary">
+          <a href={`mailto:${profile.email}`} aria-label="Send email to Andrés" className="btn btn-primary">
             Email Me
           </a>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Andrés LinkedIn profile" className="btn btn-secondary">
             LinkedIn
           </a>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="Andrés GitHub profile" className="btn btn-secondary">
             GitHub
           </a>
         </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Navbar: FC = () => {
   return (
-    <nav style={{
+    <nav aria-label="Main navigation" style={{
       position: 'sticky',
       top: 0,
       zIndex: 50,
@@ -19,12 +19,13 @@ export const Navbar: FC = () => {
       }}>
         <Link
           to="/"
+          aria-label="Home"
           style={{ fontWeight: 700, fontSize: '1.25rem', color: 'var(--text-primary)', textDecoration: 'none' }}
         >
           AM<span style={{ color: 'var(--accent-primary)' }}>.</span>
         </Link>
 
-        <div style={{ display: 'flex', gap: '1.5rem' }}>
+        <div style={{ display: 'flex', gap: '1.5rem', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
           <Link to="/" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
             Home
           </Link>

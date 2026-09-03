@@ -103,6 +103,7 @@ export const ProjectDetailPage: FC = () => {
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="View live project"
                 className="btn btn-primary"
               >
                 View Project
@@ -113,6 +114,7 @@ export const ProjectDetailPage: FC = () => {
                 href={project.repoLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="View project repository"
                 className="btn btn-secondary"
               >
                 Repository
