@@ -34,6 +34,12 @@ export const Navbar: FC = () => {
           <Link to="/#projects" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
             Projects
           </Link>
+          <Link to="/#skills" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
+            Skills
+          </Link>
+          <Link to="/#contact" style={{ fontSize: '0.875rem', fontWeight: 500 }}>
+            Contact
+          </Link>
         </div>
       </div>
     </nav>

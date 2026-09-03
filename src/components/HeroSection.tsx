@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 import type { ProfileInfo } from '../models/portfolio.types';
 
 interface HeroSectionProps {
@@ -22,7 +23,10 @@ export const HeroSection: FC<HeroSectionProps> = ({ profile }) => {
           ))}
         </div>
         <div className="hero-actions">
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <Link to="/#projects" className="btn btn-primary">
+            View Projects
+          </Link>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
             Contact Me on LinkedIn
           </a>
           <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
