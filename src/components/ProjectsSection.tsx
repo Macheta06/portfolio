@@ -1,25 +1,38 @@
+import { useState } from 'react';
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 import type { Project } from '../models/portfolio.types';
 
-// Componente interno para encapsular la tarjeta de proyecto
 const ProjectCard: FC<{ project: Project }> = ({ project }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="glass-panel" style={{ padding: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderRadius: 'var(--radius-xl)' }}>
+    <div 
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ 
+        padding: 0, 
+        display: 'flex', 
+        flexDirection: 'column', 
+        overflow: 'hidden', 
+        borderRadius: 'var(--radius-xl)',
+        background: 'var(--glass-bg)',
+        border: '1px solid var(--glass-border)',
+        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        transform: isHovered ? 'translateY(-8px)' : 'translateY(0)',
+        boxShadow: isHovered ? '0 20px 40px rgba(59, 130, 246, 0.15)' : 'none',
+        borderColor: isHovered ? 'rgba(59, 130, 246, 0.3)' : 'var(--glass-border)',
+      }}
+    >
       {project.featuredImages && project.featuredImages.length > 0 && (
-        <div style={{ height: '180px', overflow: 'hidden' }}>
-          <img
-            src={`${import.meta.env.BASE_URL}${project.featuredImages[0].replace(/^\//, '')}`}
-            alt={`${project.title} preview`}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
-          />
-        </div>
-      )}
-      <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-          <h3 style={{ color: 'var(--accent-primary)', marginBottom: 0 }}>{project.title}</h3>
+        <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.8) 0%, transparent 50%)', zIndex: 1, pointerEvents: 'none' }}></div>
           <span
             style={{
+              position: 'absolute',
+              top: '1rem',
+              right: '1rem',
+              zIndex: 2,
               fontSize: '0.7rem',
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
@@ -32,6 +45,22 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
           >
             {project.type === 'real' ? 'Real' : 'Study'}
           </span>
+          <img
+            src={`${import.meta.env.BASE_URL}${project.featuredImages[0].replace(/^\//, '')}`}
+            alt={`${project.title} preview`}
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover', 
+              transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+              transform: isHovered ? 'scale(1.08)' : 'scale(1)'
+            }}
+          />
+        </div>
+      )}
+      <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+        <div style={{ marginBottom: '0.5rem' }}>
+          <h3 style={{ color: 'var(--accent-primary)', marginBottom: 0 }}>{project.title}</h3>
         </div>
         <p style={{ flexGrow: 1, marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
           {project.summary}
@@ -42,7 +71,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
             <span 
               key={tech} 
               style={{ 
-                fontSize: '0.75rem', 
+                fontSize: '0.7rem', 
                 padding: '0.25rem 0.75rem', 
                 borderRadius: '999px',
                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
@@ -56,8 +85,9 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
         </div>
 
         <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', flexWrap: 'wrap' }}>
-          <Link to={`/projects/${project.slug}`} className="btn btn-primary project-study-link" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>
+          <Link to={`/projects/${project.slug}`} className="btn btn-primary project-study-link" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             View Case Study
+            <span style={{ display: 'inline-block', transition: 'transform 0.3s ease', transform: isHovered ? 'translateX(4px)' : 'translateX(0)' }}>→</span>
           </Link>
           {project.liveLink && (
             <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>
@@ -85,13 +115,16 @@ export const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
 
   return (
     <section aria-label="Projects" className="section-padding container animate-fade-in">
-      <h2 className="text-gradient" style={{ marginBottom: '2rem' }}>My Projects</h2>
+      <h2 className="text-gradient" style={{ marginBottom: '0.5rem' }}>My Projects</h2>
+      <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', marginBottom: '3rem' }}>
+        A selection of real-world and study projects showcasing my technical skills and problem-solving approach.
+      </p>
       
       {/* Proyectos Reales */}
       {realProjects.length > 0 && (
         <div style={{ marginBottom: '3rem' }}>
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>Real-world Projects</h3>
-          <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))' }}>
+          <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fill, minmax(min(340px, 100%), 1fr))' }}>
             {realProjects.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -103,7 +136,7 @@ export const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
       {studyProjects.length > 0 && (
         <div>
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>Study Projects</h3>
-          <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))' }}>
+          <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fill, minmax(min(340px, 100%), 1fr))' }}>
             {studyProjects.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}

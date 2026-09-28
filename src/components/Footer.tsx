@@ -10,29 +10,41 @@ export const Footer: FC<FooterProps> = ({ profile }) => {
 
   return (
     <footer style={{ 
-      marginTop: '4rem', 
-      padding: '3rem 0', 
-      borderTop: '1px solid var(--glass-border)',
+      padding: '3rem 0 2rem', 
       backgroundColor: 'var(--bg-secondary)',
       textAlign: 'center'
     }}>
+      <div style={{ 
+        height: '1px', 
+        background: 'linear-gradient(to right, transparent, var(--accent-primary), rgba(139,92,246,1), transparent)', 
+        marginBottom: '2rem' 
+      }} />
+      
       <div className="container">
-        <h3 className="text-gradient" style={{ marginBottom: '1.5rem' }}>Let's Talk</h3>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
-          I'm always open to discussing new opportunities, interesting projects, or just connecting. 
-          Feel free to reach out.
-        </p>
+        <div style={{ 
+          fontSize: '1.5rem', 
+          fontWeight: 700, 
+          letterSpacing: '-1px', 
+          marginBottom: '1rem',
+          color: 'var(--text-primary)'
+        }}>
+          AM.
+        </div>
         
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
-          <a href={`mailto:${profile.email}`} aria-label="Send email to Andrés" className="btn btn-primary">
-            Email Me
-          </a>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Andrés LinkedIn profile" className="btn btn-secondary">
-            LinkedIn
-          </a>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="Andrés GitHub profile" className="btn btn-secondary">
-            GitHub
-          </a>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center',
+          gap: '0.5rem', 
+          marginBottom: '2rem', 
+          flexWrap: 'wrap',
+          color: 'var(--text-secondary)'
+        }}>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease' }}>GitHub</a>
+          <span>·</span>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease' }}>LinkedIn</a>
+          <span>·</span>
+          <a href={`mailto:${profile.email}`} style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Email</a>
         </div>
 
         <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
