@@ -202,4 +202,61 @@ a:hover {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
   .section-padding { padding: 3rem 0; }
+
+  /* Mobile nav: show hamburger, hide desktop links */
+  .hamburger-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links-desktop {
+    display: none !important;
+  }
+}
+
+/* Slide in animation for mobile menu */
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateX(100%); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+/* Project card image hover */
+.glass-panel img {
+  transition: transform 0.4s ease;
+}
+
+.glass-panel:hover img {
+  transform: scale(1.05);
+}
+
+/* Enhanced focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
 }

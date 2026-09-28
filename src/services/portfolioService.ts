@@ -114,6 +114,7 @@ export const getProjects = (): Project[] => [
     ],
     liveLink: "https://somoshuizy.vercel.app/",
     repoLink: "https://github.com/Macheta06/huizy-store",
+    featuredImages: ["/projects/somoshuizy/hero.png"],
   },
   {
     id: "proj-2",
@@ -199,6 +200,7 @@ export const getProjects = (): Project[] => [
     ],
     liveLink: "https://elagropecuariomadrid.com/",
     repoLink: "https://github.com/Macheta06/agropecuario-website",
+    featuredImages: ["/projects/hardware-store/hero.png"],
   },
   {
     id: "proj-3",
@@ -234,6 +236,7 @@ export const getProjects = (): Project[] => [
     technologies: ["React", "TypeScript", "Vite", "Zustand"],
     liveLink: "https://teslo-shop-react-mac.netlify.app/",
     repoLink: "https://github.com/Macheta06/teslo-shop",
+    featuredImages: ["/projects/teslo-shop/hero.png"],
   },
   {
     id: "proj-4",
@@ -269,6 +272,7 @@ export const getProjects = (): Project[] => [
     technologies: ["React", "TypeScript", "Vite", "Context API", "TanStack Query"],
     liveLink: "https://roaring-heliotrope-7cfb9c.netlify.app/",
     repoLink: "https://github.com/Macheta06/heroes-app",
+    featuredImages: ["/projects/heroes-app/hero.png"],
   },
 ];
 

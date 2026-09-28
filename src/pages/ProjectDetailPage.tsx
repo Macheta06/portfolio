@@ -65,6 +65,16 @@ export const ProjectDetailPage: FC = () => {
           ← Back to Projects
         </Link>
 
+        {project.featuredImages && project.featuredImages.length > 0 && (
+          <div style={{ marginBottom: '2rem', borderRadius: 'var(--radius-xl)', overflow: 'hidden' }}>
+            <img
+              src={project.featuredImages[0]}
+              alt={`${project.title} preview`}
+              style={{ width: '100%', height: 'auto', maxHeight: '400px', objectFit: 'cover' }}
+            />
+          </div>
+        )}
+
         <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2rem' }}>
           <span
             style={{
