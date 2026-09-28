@@ -9,7 +9,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
       {project.featuredImages && project.featuredImages.length > 0 && (
         <div style={{ height: '180px', overflow: 'hidden' }}>
           <img
-            src={project.featuredImages[0]}
+            src={`${import.meta.env.BASE_URL}${project.featuredImages[0].replace(/^\//, '')}`}
             alt={`${project.title} preview`}
             style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
           />

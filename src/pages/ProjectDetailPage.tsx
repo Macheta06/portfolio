@@ -68,7 +68,7 @@ export const ProjectDetailPage: FC = () => {
         {project.featuredImages && project.featuredImages.length > 0 && (
           <div style={{ marginBottom: '2rem', borderRadius: 'var(--radius-xl)', overflow: 'hidden' }}>
             <img
-              src={project.featuredImages[0]}
+              src={`${import.meta.env.BASE_URL}${project.featuredImages[0].replace(/^\//, '')}`}
               alt={`${project.title} preview`}
               style={{ width: '100%', height: 'auto', maxHeight: '400px', objectFit: 'cover' }}
             />
