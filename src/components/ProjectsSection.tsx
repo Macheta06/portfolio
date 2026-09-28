@@ -91,7 +91,7 @@ export const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
       {realProjects.length > 0 && (
         <div style={{ marginBottom: '3rem' }}>
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>Real-world Projects</h3>
-          <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))' }}>
+          <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))' }}>
             {realProjects.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -103,7 +103,7 @@ export const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
       {studyProjects.length > 0 && (
         <div>
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>Study Projects</h3>
-          <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))' }}>
+          <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))' }}>
             {studyProjects.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}

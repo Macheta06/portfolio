@@ -64,7 +64,7 @@ a:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .text-gradient {
@@ -198,10 +198,20 @@ a:hover {
 }
 
 /* Responsive adjustments */
+
+/* Tablet and below */
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  .section-padding { padding: 3rem 0; }
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
 
   /* Mobile nav: show hamburger, hide desktop links */
   .hamburger-btn {
@@ -212,6 +222,32 @@ a:hover {
 
   .nav-links-desktop {
     display: none !important;
+  }
+
+  /* Prevent glass-panel hover lift on touch devices */
+  .glass-panel:hover {
+    transform: none;
+    box-shadow: var(--glass-shadow);
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.125rem; }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
   }
 }
 

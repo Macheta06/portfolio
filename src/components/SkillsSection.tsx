@@ -36,7 +36,7 @@ export const SkillsSection: FC = () => {
         style={{
           display: 'grid',
           gap: '1.5rem',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))',
         }}
       >
         {skillCategories.map((category) => (

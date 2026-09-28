@@ -31,7 +31,7 @@ export const EducationSection: FC<EducationSectionProps> = ({ educationList, cer
         {/* Certificaciones / Cursos */}
         <div>
           <h3 style={{ marginBottom: '1rem', color: 'var(--text-secondary)' }}>Notable Certifications</h3>
-          <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))' }}>
+          <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fill, minmax(min(300px, 100%), 1fr))' }}>
             {certifications.map((cert) => (
               <div key={cert.id} className="glass-panel" style={{ padding: '1.5rem' }}>
                 <h4 style={{ color: 'var(--accent-primary)', marginBottom: '0.25rem' }}>{cert.title}</h4>
